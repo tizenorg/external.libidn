@@ -6,6 +6,7 @@ Group:      System/Libraries
 License:    LGPLv2.1+
 URL:        http://www.gnu.org/software/libidn/
 Source0:    http://ftp.gnu.org/gnu/libidn/%{name}-%{version}.tar.gz
+Source1001: packaging/libidn.manifest 
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig
@@ -38,6 +39,7 @@ developing programs which use the GNU libidn library.
 
 
 %build
+cp %{SOURCE1001} .
 
 %configure --disable-static \
     --disable-csharp \
@@ -63,6 +65,7 @@ rm -f %{buildroot}%{_bindir}/idn
 %postun -p /sbin/ldconfig
 
 %files -f libidn.lang
+%manifest libidn.manifest
 %defattr(-,root,root,-)
 %dir %{_datadir}/emacs
 %dir %{_datadir}/emacs/site-lisp
@@ -71,6 +74,7 @@ rm -f %{buildroot}%{_bindir}/idn
 %{_libdir}/libidn.so.*
 
 %files devel
+%manifest libidn.manifest
 %defattr(-,root,root,-)
 %{_libdir}/libidn.so
 %{_includedir}/*.h
