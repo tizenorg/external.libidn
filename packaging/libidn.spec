@@ -1,7 +1,7 @@
 Name:       libidn
 Summary:    Internationalized Domain Name support library
 Version:    1.15
-Release:    1
+Release:    6
 Group:      System/Libraries
 License:    LGPLv2.1+
 URL:        http://www.gnu.org/software/libidn/

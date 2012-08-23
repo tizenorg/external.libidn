@@ -1,3 +1,11 @@
+libidn (1.15-6) unstable; urgency=low
+
+  * Updated tag value for tizen 2.0 build
+  * Git: external/libidn
+  * Tag: libidn_1.15-6 
+
+ -- Taeksu Shin <taeksu.shin@samsung.com>  Thu, 23 Aug 2012 13:57:42 +0900
+
 libidn (1.15-5slp2) unstable; urgency=low
 
   * Renamed tag
