@@ -1,0 +1,40 @@
+Source: libidn
+Section: libs
+Priority: optional
+Maintainer: Anibal Monsalve Salazar <anibal@debian.org>, Taeksu Shin <taeksu.shin@samsung.com>, Dongwook Lee <dwmax.lee@samsung.com>
+Uploaders: Taeksu Shin <taeksu.shin@samsung.com>, Dongwook Lee <dwmax.lee@samsung.com>
+XS-Dm-Upload-Allowed: yes
+Standards-Version: 3.8.3
+Build-Depends: debhelper (>= 6)
+Vcs-Cvs: :pserver:anonymous@cvs.savannah.gnu.org:/sources/libidn
+Vcs-Browser: http://cvs.savannah.gnu.org/viewvc/debian-libidn/?root=libidn
+Homepage: http://www.gnu.org/software/libidn/
+
+Package: libidn11-dev
+Section: libdevel
+Architecture: any
+Depends: libidn11 (= ${binary:Version}), pkg-config, ${misc:Depends}
+Conflicts: libidn9-dev
+Description: Development files for GNU Libidn, an IDN library
+ GNU Libidn is a fully documented implementation of the Stringprep,
+ Punycode and IDNA specifications.  Libidn's purpose is to encode and
+ decode internationalized domain names.  The Nameprep, XMPP, SASLprep,
+ and iSCSI profiles are supported.
+ .
+ This package contains the header files, static library, pkg-config
+ information, API man pages, and the Libidn manual.
+
+Package: libidn11
+Priority: standard
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: libidn9-dev
+Replaces: libidn11-dev
+Description: GNU Libidn library, implementation of IETF IDN specifications
+ GNU Libidn is a fully documented implementation of the Stringprep,
+ Punycode and IDNA specifications.  Libidn's purpose is to encode and
+ decode internationalized domain names.  The Nameprep, XMPP, SASLprep,
+ and iSCSI profiles are supported.
+ .
+ This package contains the shared library.
+
