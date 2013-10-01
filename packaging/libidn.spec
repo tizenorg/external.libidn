@@ -50,6 +50,9 @@ make %{?jobs:-j%jobs}
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/license
+cp COPYING %{buildroot}/usr/share/license/%{name}
+
 %make_install 
 
 rm -f $RPM_BUILD_ROOT/%_infodir/dir
@@ -72,6 +75,7 @@ rm -f %{buildroot}%{_bindir}/idn
 %{_datadir}/emacs/site-lisp/idna.el
 %{_datadir}/emacs/site-lisp/punycode.el
 %{_libdir}/libidn.so.*
+/usr/share/license/%{name}
 
 %files devel
 %manifest libidn.manifest
