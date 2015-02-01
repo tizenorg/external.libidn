@@ -20,6 +20,7 @@ Names (IDN) working group, used for internationalized domain
 names.
 
 
+
 %package devel
 Summary:    Development files for the libidn library
 Group:      Development/Libraries
