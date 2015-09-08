@@ -1,12 +1,11 @@
 Name:       libidn
 Summary:    Internationalized Domain Name support library
-Version:    1.15
-Release:    6
+Version:    1.16
+Release:    1
 Group:      System/Libraries
-License:    LGPLv2.1+
+License:    LGPL-2.1+ and GPL-3.0+
 URL:        http://www.gnu.org/software/libidn/
 Source0:    http://ftp.gnu.org/gnu/libidn/%{name}-%{version}.tar.gz
-Source1001: packaging/libidn.manifest 
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig
@@ -39,7 +38,6 @@ developing programs which use the GNU libidn library.
 
 
 %build
-cp %{SOURCE1001} .
 
 %configure --disable-static \
     --disable-csharp \
@@ -60,23 +58,24 @@ rm -f %{buildroot}%{_bindir}/idn
 
 %remove_docs 
 
+mkdir -p %{buildroot}/usr/share/license
+cp COPYING.LIB %{buildroot}/usr/share/license/%{name}
+
 %post -p /sbin/ldconfig
 
 %postun -p /sbin/ldconfig
 
 %files -f libidn.lang
-%manifest libidn.manifest
 %defattr(-,root,root,-)
 %dir %{_datadir}/emacs
 %dir %{_datadir}/emacs/site-lisp
 %{_datadir}/emacs/site-lisp/idna.el
 %{_datadir}/emacs/site-lisp/punycode.el
 %{_libdir}/libidn.so.*
+/usr/share/license/%{name}
 
 %files devel
-%manifest libidn.manifest
 %defattr(-,root,root,-)
 %{_libdir}/libidn.so
 %{_includedir}/*.h
 %{_libdir}/pkgconfig/libidn.pc
-
