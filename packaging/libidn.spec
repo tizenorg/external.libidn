@@ -1,9 +1,10 @@
 Name:       libidn
 Summary:    Internationalized Domain Name support library
-Version:    1.16
-Release:    1
+Version:    1.15
+Release:    %{?release_prefix:%{release_prefix}.}1.45.%{?dist}%{!?dist:tizen}
+VCS:        external/libidn#submit/trunk/20121022.071724-1-g9e165ae3da5f9f3c5e073714ea3856c67f8c8bd0
 Group:      System/Libraries
-License:    LGPL-2.1+ and GPL-3.0+
+License:    LGPL-2.1+
 URL:        http://www.gnu.org/software/libidn/
 Source0:    http://ftp.gnu.org/gnu/libidn/%{name}-%{version}.tar.gz
 Requires(post): /sbin/ldconfig
